@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <title> @yield('tittle') </title>
-    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> @yield('title') </title>
     <!-- Bootstrap 3.3.7 -->
     <link rel="stylesheet" href="{{ asset('template') }}/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <!-- Font Awesome -->
@@ -15,9 +15,6 @@
     <link rel="stylesheet" href="{{ asset('template') }}/dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{ asset('template') }}/dist/css/skins/_all-skins.min.css">
-    <!-- Morris chart -->
-    <link rel="stylesheet" href="{{ asset('template') }}/bower_components/morris.js/morris.css">
-    <!-- jvectormap -->
     <!-- Google Font -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
@@ -38,7 +35,6 @@
             <nav class="navbar navbar-static-top">
                 <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
                 </a>
-
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
                         <!-- User Account: style can be found in dropdown.less -->
@@ -46,7 +42,6 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <img src="{{ asset('template') }}/dist/img/user2-160x160.jpg" class="img-circle"
                                     style="width: 18px; height: 18px;" alt="User Photo">
-                                {{-- <i class="fa fa-user"></i> --}}
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
@@ -59,15 +54,13 @@
                                 </li>
                                 <!-- Menu Footer-->
                                 <li class="user-footer" style="text-align: center;">
-                                    <a>
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                            style="display: none;">
-                                            @csrf
-                                        </form>
-                                        <a href="#"
-                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                            <span>Keluar</span>
-                                        </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                        style="display: none;">
+                                        @csrf
+                                    </form>
+                                    <a href="#"
+                                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                        <span class="btn btn-primary">Keluar</span>
                                     </a>
                                 </li>
                             </ul>
@@ -86,10 +79,8 @@
             </section>
         </div>
 
-
         <footer class="main-footer">
-            <strong>Copyright &copy; {{ date('Y') }} <a href="#">Perpustakaan</a>.</strong> All
-            rights
+            <strong>Copyright &copy; {{ date('Y') }} <a href="#">Perpustakaan</a>.</strong> All rights
             reserved.
         </footer>
     </div>
