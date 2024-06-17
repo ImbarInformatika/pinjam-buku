@@ -12,6 +12,8 @@
             color: white;
             border-radius: 3px;
             overflow: hidden;
+            /* Perubahan: Tambahkan margin-bottom untuk memberikan jarak antar card */
+            margin-bottom: 20px;
         }
 
         .mahasiswa {
@@ -34,9 +36,10 @@
             background-color: #47627e !important;
         }
 
-
         .small-box .inner {
             z-index: 2;
+            /* Perubahan: Tambahkan text-align center */
+            text-align: center;
         }
 
         .small-box .icon {
@@ -46,6 +49,19 @@
             right: 20px;
             top: 20px;
             z-index: 1;
+        }
+
+        /* Perubahan: Tambahkan media query untuk memastikan isi card berada di tengah ketika responsif */
+        @media (max-width: 768px) {
+            .small-box {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .small-box .icon {
+                position: static;
+                margin-top: 10px;
+            }
         }
     </style>
 @endpush
