@@ -72,15 +72,3 @@
         </div>
     </section>
 @endsection
-
-@push('script')
-    <script>
-        function showSuccessAlert() {
-            var alertElement = document.getElementById('success-alert');
-            alertElement.style.display = 'block';
-        }
-
-        // Misalnya, fungsi ini dipanggil setelah data berhasil ditambahkan
-        showSuccessAlert();
-    </script>
-@endpush

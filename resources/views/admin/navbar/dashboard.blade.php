@@ -38,8 +38,26 @@
 
         .small-box .inner {
             z-index: 2;
-            /* Perubahan: Tambahkan text-align center */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            /* Perubahan: Tambahkan align-items flex-start untuk rata kiri */
+        }
+
+        .small-box .inner h3 {
+            margin: 0;
+            font-size: 2.2em;
+            text-align: left;
+            /* Perubahan: pastikan teks nilai rata kiri */
+        }
+
+        .small-box .inner h4 {
+            margin: 0;
+            font-size: 1.2em;
             text-align: center;
+            /* Perubahan: pastikan teks judul tetap rata tengah */
+            align-self: center;
+            /* Perubahan: pastikan teks judul tetap rata tengah */
         }
 
         .small-box .icon {
@@ -61,6 +79,17 @@
             .small-box .icon {
                 position: static;
                 margin-top: 10px;
+            }
+
+            .small-box .inner {
+                align-items: center;
+                /* Perubahan: pastikan teks nilai dan judul berada di tengah ketika responsif */
+            }
+
+            .small-box .inner h3,
+            .small-box .inner h4 {
+                text-align: center;
+                /* Perubahan: pastikan teks nilai dan judul berada di tengah ketika responsif */
             }
         }
     </style>
@@ -144,5 +173,5 @@
 @endsection
 
 @push('script')
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    {{--  --}}
 @endpush
