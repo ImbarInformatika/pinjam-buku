@@ -51,35 +51,37 @@
             <div class="card-header">
             </div>
             <div class="card-body">
-                <table id="myTable" class="table table-bordered table-striped table-danger">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Nama</th>
-                            <th>Alamat</th>
-                            <th>No Telepon</th>
-                            <th>Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @forelse ($penerbit as $penerbit)
+                <div class="table-responsive">
+                    <table id="myTable" class="table table-bordered table-striped table-danger">
+                        <thead>
                             <tr>
-                                <td> {{ $loop->iteration }} </td>
-                                <td> {{ $penerbit->nama_penerbit }} </td>
-                                <td> {{ $penerbit->alamat }} </std>
-                                <td> {{ $penerbit->no_telepon }} </td>
-                                <td>
-
-                                    <a href="{{ url('ubah-penerbit/' . $penerbit->id) }}"
-                                        class="btn btn-warning btn-sm">Ubah</a>
-                                    <a href="{{ url('hapus-penerbit/' . $penerbit->id) }}"
-                                        class="btn btn-danger btn-sm">Hapus</a>
-                                </td>
+                                <th>No</th>
+                                <th>Nama</th>
+                                <th>Alamat</th>
+                                <th>No Telepon</th>
+                                <th>Aksi</th>
                             </tr>
-                        @empty
-                        @endforelse
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            @forelse ($penerbit as $penerbit)
+                                <tr>
+                                    <td> {{ $loop->iteration }} </td>
+                                    <td> {{ $penerbit->nama_penerbit }} </td>
+                                    <td> {{ $penerbit->alamat }} </std>
+                                    <td> {{ $penerbit->no_telepon }} </td>
+                                    <td>
+
+                                        <a href="{{ url('ubah-penerbit/' . $penerbit->id) }}"
+                                            class="btn btn-warning btn-sm">Ubah</a>
+                                        <a href="{{ url('hapus-penerbit/' . $penerbit->id) }}"
+                                            class="btn btn-danger btn-sm">Hapus</a>
+                                    </td>
+                                </tr>
+                            @empty
+                            @endforelse
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </section>

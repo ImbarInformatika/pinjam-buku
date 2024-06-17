@@ -49,53 +49,55 @@
     <section class="content">
         <div class="card">
             <div class="card-body">
-                <table id="myTable" class="table table-bordered table-striped">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Nama Mahasiswa</th>
-                            <th>Judul Buku</th>
-                            <th>Nomor Telepon</th>
-                            <th>Tanggal Peminjaman</th>
-                            <th>Tanggal kembali</th>
-                            <th>denda</th>
-                            <th>Status</th>
-                            <th>Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @forelse ($peminjaman as $no => $peminjaman)
+                <div class="table-responsive">
+                    <table id="myTable" class="table table-bordered table-striped">
+                        <thead>
                             <tr>
-                                <td>{{ $loop->iteration }}</td>
-                                <td>{{ $peminjaman->mahasiswa->nama_mahasiswa }}</td>
-                                <td>{{ $peminjaman->buku->judul_buku }}</td>
-                                <td>{{ $peminjaman->no_telepon }}</td>
-                                <td>{{ $peminjaman->tanggal_pinjam }}</td>
-                                <td>{{ $peminjaman->tanggal_kembali }}</td>
-                                <td>{{ $peminjaman->denda }}</td>
-                                <td>
-                                    @if ($peminjaman->status == 'Belum Kembali')
-                                        <span>Belum Kembali</span>
-                                    @else
-                                        <span>Dikembalikan</span>
-                                    @endif
-                                </td>
-                                <td>
-                                    @if ($peminjaman->status == 'Belum Kembali')
-                                        <form action="{{ route('kembalikan', $peminjaman->id) }}" method="POST">
-                                            @csrf
-                                            @method('PUT')
-                                            <button type="submit">Kembalikan</button>
-                                        </form>
-                                    @else
-                                        <span>Tidak tersedia</span>
-                                    @endif
-                                </td>
+                                <th>No</th>
+                                <th>Nama Mahasiswa</th>
+                                <th>Judul Buku</th>
+                                <th>Nomor Telepon</th>
+                                <th>Tanggal Peminjaman</th>
+                                <th>Tanggal kembali</th>
+                                <th>denda</th>
+                                <th>Status</th>
+                                <th>Aksi</th>
                             </tr>
-                        @empty
-                        @endforelse
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            @forelse ($peminjaman as $no => $peminjaman)
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $peminjaman->mahasiswa->nama_mahasiswa }}</td>
+                                    <td>{{ $peminjaman->buku->judul_buku }}</td>
+                                    <td>{{ $peminjaman->no_telepon }}</td>
+                                    <td>{{ $peminjaman->tanggal_pinjam }}</td>
+                                    <td>{{ $peminjaman->tanggal_kembali }}</td>
+                                    <td>{{ $peminjaman->denda }}</td>
+                                    <td>
+                                        @if ($peminjaman->status == 'Belum Kembali')
+                                            <span>Belum Kembali</span>
+                                        @else
+                                            <span>Dikembalikan</span>
+                                        @endif
+                                    </td>
+                                    <td>
+                                        @if ($peminjaman->status == 'Belum Kembali')
+                                            <form action="{{ route('kembalikan', $peminjaman->id) }}" method="POST">
+                                                @csrf
+                                                @method('PUT')
+                                                <button type="submit">Kembalikan</button>
+                                            </form>
+                                        @else
+                                            <span>Tidak tersedia</span>
+                                        @endif
+                                    </td>
+                                </tr>
+                            @empty
+                            @endforelse
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </section>

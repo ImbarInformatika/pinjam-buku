@@ -50,38 +50,39 @@
             <div class="card-header">
             </div>
             <div class="card-body">
-                <table id="myTable" class="table table-bordered table-striped table-danger">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Judul Buku</th>
-                            <th>Nama Penerbit</th>
-                            <th>Tahun Terbit</th>
-                            <th>Jumlah Buku</th>
-                            <th>Tanggal Pengadaan</th>
-                            <th>Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @forelse ($buku as $buku)
+                <div class="table-responsive">
+                    <table id="myTable" class="table table-bordered table-striped table-danger">
+                        <thead>
                             <tr>
-                                <td>{{ $loop->iteration }}</td>
-                                <td>{{ $buku->judul_buku }}</td>
-                                <td>{{ $buku->penerbit->nama_penerbit }}</td>
-                                <td>{{ $buku->tahun_terbit }}</td>
-                                <td>{{ $buku->jumlah_buku }}</td>
-                                <td>{{ $buku->tanggal_pengadaan }}</td>
-                                <td>
-                                    <a href="{{ url('ubah-buku/' . $buku->id) }}" class="btn btn-warning">Ubah</a>
-                                    <a href="{{ url('hapus-buku/' . $buku->id) }}" class="btn btn-danger">Hapus</a>
-                                </td>
+                                <th>No</th>
+                                <th>Judul Buku</th>
+                                <th>Nama Penerbit</th>
+                                <th>Tahun Terbit</th>
+                                <th>Jumlah Buku</th>
+                                <th>Tanggal Pengadaan</th>
+                                <th>Aksi</th>
                             </tr>
-                        @empty
-                        @endforelse
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            @forelse ($buku as $buku)
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $buku->judul_buku }}</td>
+                                    <td>{{ $buku->penerbit->nama_penerbit }}</td>
+                                    <td>{{ $buku->tahun_terbit }}</td>
+                                    <td>{{ $buku->jumlah_buku }}</td>
+                                    <td>{{ $buku->tanggal_pengadaan }}</td>
+                                    <td>
+                                        <a href="{{ url('ubah-buku/' . $buku->id) }}" class="btn btn-warning">Ubah</a>
+                                        <a href="{{ url('hapus-buku/' . $buku->id) }}" class="btn btn-danger">Hapus</a>
+                                    </td>
+                                </tr>
+                            @empty
+                            @endforelse
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
     </section>
 @endsection
 

@@ -52,36 +52,38 @@
             <div class="card-header">
             </div>
             <div class="card-body">
-                <table id="myTable" class="table table-bordered table-striped table-danger">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Nama</th>
-                            <th>Nim</th>
-                            <th>Angkatan</th>
-                            <th>Fakultas</th>
-                            <th>Prodi</th>
-                            <th>Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @forelse ($mahasiswa as $mhs)
+                <div class="table-responsive">
+                    <table id="myTable" class="table table-bordered table-striped">
+                        <thead>
                             <tr>
-                                <td>{{ $loop->iteration }}</td>
-                                <td>{{ $mhs->nama_mahasiswa }}</td>
-                                <td>{{ $mhs->nim }}</td>
-                                <td>{{ $mhs->angkatan }}</td>
-                                <td>{{ $mhs->fakultas }}</td>
-                                <td>{{ $mhs->prodi }}</td>
-                                <td>
-                                    <a href="{{ url('ubah-mahasiswa/' . $mhs->id) }}" class="btn btn-warning">Ubah</a>
-                                    <a href="{{ url('hapus-mahasiswa/' . $mhs->id) }}" class="btn btn-danger">Hapus</a>
-                                </td>
+                                <th>No</th>
+                                <th>Nama</th>
+                                <th>Nim</th>
+                                <th>Angkatan</th>
+                                <th>Fakultas</th>
+                                <th>Prodi</th>
+                                <th>Aksi</th>
                             </tr>
-                        @empty
-                        @endforelse
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            @forelse ($mahasiswa as $mhs)
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $mhs->nama_mahasiswa }}</td>
+                                    <td>{{ $mhs->nim }}</td>
+                                    <td>{{ $mhs->angkatan }}</td>
+                                    <td>{{ $mhs->fakultas }}</td>
+                                    <td>{{ $mhs->prodi }}</td>
+                                    <td>
+                                        <a href="{{ url('ubah-mahasiswa/' . $mhs->id) }}" class="btn btn-warning">Ubah</a>
+                                        <a href="{{ url('hapus-mahasiswa/' . $mhs->id) }}" class="btn btn-danger">Hapus</a>
+                                    </td>
+                                </tr>
+                            @empty
+                            @endforelse
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </section>
