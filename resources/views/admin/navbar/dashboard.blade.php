@@ -68,6 +68,17 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
+                    <div class="small-box bukudipinjam">
+                        <div class="inner">
+                            <h3><strong>{{ $jumlah_buku_dipinjam }}</strong></h3>
+                            <h4><strong>Total Buku yang sedang Dipinjam</strong></h4>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-book"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
                     <div class="small-box mahasiswa">
                         <div class="inner">
                             <h3><strong>{{ $jumlah_mahasiswa }}</strong></h3>
