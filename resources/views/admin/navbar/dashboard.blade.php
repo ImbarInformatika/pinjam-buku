@@ -17,29 +17,29 @@
         }
 
         .mahasiswa {
-            background-color: #dde58a !important;
-            color: black
+            background-color: #afc9f0 !important;
+            color: white
         }
 
 
         .penerbit {
-            background-color: #daf36f !important;
-            color: black
+            background-color: #88b1ee !important;
+            color: white
         }
 
         .keseluruhanbuku {
-            background-color: #eef74a !important;
-            color: black
+            background-color: #5c96ec !important;
+            color: white
         }
 
         .bukudipinjam {
-            background-color: #e6f825 !important;
-            color: black
+            background-color: #3a85f6 !important;
+            color: white
         }
 
         .bukuada {
-            background-color: #ebf70c !important;
-            color: black
+            background-color: #2d7bf1 !important;
+            color: white
         }
 
         .small-box .inner {
